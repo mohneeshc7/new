@@ -13,11 +13,13 @@ class _LoginState extends State<Login> {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.white,
-        body: Column(
+        body: Column(mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('welcome'),
+            Text('Login'),
+            SizedBox(height: 20,),
             Text(
                 'login to your account'),
+            SizedBox(height: 20,),
             TextField(
               decoration: InputDecoration(
                   hintText: 'email',
@@ -25,16 +27,20 @@ class _LoginState extends State<Login> {
                       borderSide: BorderSide(width: 3, color: Colors.black)
                   )),
             ),
+            SizedBox(height: 20,),
             TextField(decoration: InputDecoration(
                 hintText: 'paaword',
                 enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(width: 3, color: Colors.black)
                 )),),
-            TextField(decoration: InputDecoration(
-                hintText: 'Login',
-                enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(width: 3, color: Colors.black)
-                )),),
+            SizedBox(height: 20,),
+            TextButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Login()));
+                },
+                child: Text('login')),
+            SizedBox(height: 20,),
             Text('Dont have an account? sign up'),
           ],
         ),
